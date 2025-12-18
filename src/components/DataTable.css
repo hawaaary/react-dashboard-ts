@@ -185,12 +185,79 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   min-width: 200px;
   z-index: 1000;
-  display: none;
-  margin-top: 5px;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  visibility: hidden;
+  pointer-events: none;
+  margin-top: 6px;
 }
 
-.dropdown:hover .dropdown-content {
+.dropdown.open .dropdown-content {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.dropdown-sep {
+  height: 1px;
+  background: #f0f0f0;
+  margin: 4px 0;
+}
+
+.dropdown-item {
   display: block;
+  width: 100%;
+  padding: 12px 15px;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  font-size: 13px;
+  transition: background-color 0.16s ease, color 0.16s ease, transform 0.12s ease;
+}
+
+/* Index column */
+.th-index, .td-index {
+  width: 64px;
+  text-align: center;
+}
+
+.index-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, #f0f6ff 0%, #e6f4ff 100%);
+  border-radius: 6px;
+  font-weight: 700;
+  color: #0077b6;
+}
+
+/* Pagination number buttons */
+.page-button {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+  background: white;
+  cursor: pointer;
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+.page-button:hover:not(.active) {
+  background: #f8f9fa;
+  border-color: #00d4ff;
+  color: #00a3d1;
+}
+
+.page-button.active {
+  background: linear-gradient(90deg, #00d4ff 0%, #0099cc 100%);
+  color: white;
+  border-color: transparent;
 }
 
 .dropdown-item {
@@ -217,6 +284,7 @@
 .dropdown-item:hover {
   background-color: #f8f9fa;
   color: #00d4ff;
+  transform: translateX(4px);
 }
 
 .datatable-footer {
@@ -290,6 +358,16 @@
   height: 400px;
   color: #ff6b6b;
   font-size: 16px;
+  font-weight: 600;
+}
+
+.datatable-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 240px;
+  color: #999;
+  font-size: 15px;
   font-weight: 600;
 }
 
