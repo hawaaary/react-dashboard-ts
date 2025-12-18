@@ -1,0 +1,52 @@
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  background-color: #f0f2f5;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-body {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+.welcome-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+}
+
+.welcome-section h1 {
+  color: #1a1a2e;
+  margin-bottom: 10px;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.welcome-section p {
+  color: #999;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+
+  .dashboard-body {
+    padding: 20px;
+  }
+
+  .welcome-section h1 {
+    font-size: 24px;
+  }
+}
